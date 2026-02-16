@@ -253,6 +253,7 @@
           <a href="#" target="_blank">Fiverr 🟢</a>
           <a href="mailto:jashembedded@gmail.com">Email 🔴</a>
            <a href="https://discord.gg/EeeDYnjKWU" target="_blank">Discord 🟣</a>
+          <a href="" onclick="openCertificates()">My Certificates ⚪</a>
         </div>
       </div>
 
@@ -266,6 +267,25 @@
   <footer class="footer">
     <p>© 2026 Jash. All Rights Reserved.</p>
   </footer>
+
+  <div id="certModal" class="cert-modal">
+  <div class="cert-content">
+    <span class="cert-close" onclick="closeCertificates()">✖</span>
+
+    <h2>My Worthy Certificates! 📜</h2>
+
+    <div class="cert-slider">
+      <button class="cert-btn" onclick="prevCert()">❮</button>
+
+      <img id="certImage" src="cert1.jpg" alt="Certificate">
+
+      <button class="cert-btn" onclick="nextCert()">❯</button>
+    </div>
+
+    <p id="certCount">1 / 3</p>
+  </div>
+</div>
+
 
   <script src="script.js"></script>
 </body>
