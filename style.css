@@ -698,10 +698,18 @@ section {
   font-family: "Space Grotesk", sans-serif;
   text-align: left;
   transition: 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
 }
 
 .cert-link-btn:hover {
   border: 1px solid cyan;
   box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.25);
   color: cyan;
+}
+.cert-link-btn:focus {
+  outline: none;
+  box-shadow: none;
 }
