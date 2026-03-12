@@ -713,3 +713,7 @@ section {
   outline: none;
   box-shadow: none;
 }
+
+.btn i{
+  margin-right:6px;
+}
