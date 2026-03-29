@@ -767,3 +767,11 @@ transition: 0.3s;
 transform: scale(1.1);
 box-shadow: 0 10px 20px rgba(99,102,241,0.4);
 }
+
+.sparkle {
+position: absolute;
+top: 5px;
+right: 5px;
+font-size: 10px;
+animation: sparkleMove 1s infinite alternate;
+}
