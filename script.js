@@ -342,3 +342,6 @@ setTimeout(() => {
 funFactBox.classList.remove("active");
 }, 4000);
 });
+setTimeout(() => {
+  factBox.style.opacity = "0";
+}, 4000); // 4 seconds minimum
