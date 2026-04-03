@@ -49,6 +49,7 @@ window.addEventListener("load", () => {
     // Fully remove loader
     setTimeout(() => {
       loader.style.display = "none";
+      document.getElementById("funFactContainer").classList.add("show");
     }, 1600);
 
   }, 1600);
