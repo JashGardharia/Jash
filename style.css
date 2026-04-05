@@ -291,25 +291,29 @@ section {
   letter-spacing: 0.5px;
 }
 
-/* EACH CATEGORY BLOCK */
-.skills-section > div {
-  display: flex;
-  flex-direction: column;
-  gap: 16px; /* space between heading and grid */
+.skills{
+padding:100px 40px;
 }
 
-/* GRID (keep your original, just slightly improved) */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 18px;
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
 }
 
-/* OPTIONAL: ADD SUBTLE SEPARATION BETWEEN SECTIONS */
-.skills-section > div:not(:last-child) {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.08);
+.skill-card{
+padding:30px;
+background:#111;
+border-radius:15px;
+text-align:center;
+transition:0.3s;
+cursor:pointer;
 }
+
+.skill-card:hover{
+transform:translateY(-10px) scale(1.05);
+background:#1a1a1a;
+} 
 
 /* CATEGORY BLOCK */
 .category {
