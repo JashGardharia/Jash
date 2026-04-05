@@ -374,3 +374,44 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(document.querySelector(".stats"));
 lucide.createIcons();
+
+const toggle = document.getElementById("toggleSwitch");
+const ir = document.getElementById("irSensor");
+const touch = document.getElementById("touchSensor");
+const led = document.getElementById("mainLED");
+
+function turnOn(source) {
+  // turn OFF everything first
+  toggle.checked = false;
+  led.classList.remove("on");
+
+  // activate selected
+  if (source === "toggle") {
+    toggle.checked = true;
+    led.classList.add("on");
+  }
+
+  if (source === "ir") {
+    led.classList.add("on");
+  }
+
+  if (source === "touch") {
+    led.classList.add("on");
+  }
+}
+
+// Toggle
+toggle.addEventListener("change", () => {
+  if (toggle.checked) turnOn("toggle");
+  else led.classList.remove("on");
+});
+
+// IR Sensor (hover detection)
+ir.addEventListener("mouseenter", () => {
+  turnOn("ir");
+});
+
+// Touch Sensor
+touch.addEventListener("click", () => {
+  turnOn("touch");
+});
