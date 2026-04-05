@@ -295,10 +295,12 @@ section {
 padding:100px 40px;
 }
 
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* MAX 6 per row */
+  gap: 20px;
+  max-width: 1000px; /* prevents touching edges */
+  margin: auto; /* center it */
 }
 
 .skill-card {
