@@ -300,19 +300,28 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:20px;
 }
+.skill-card {
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 
-.skill-card{
-padding:30px;
-background:#00ffff;
-border-radius:15px;
-text-align:center;
-transition:0.3s;
-cursor:pointer;
+  /* nice transparent cyan glow background */
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-.skill-card:hover{
-transform:translateY(-10px) scale(1.05);
-background:#1a1a1a;
+/* Hover effect */
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(0, 255, 255, 0.25);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
 } 
 
 /* CATEGORY BLOCK */
