@@ -848,121 +848,133 @@ section {
   margin: 80px 0;
 }
 
-.controls {
+/* HORIZONTAL BAR */
+.lab-bar {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 30px;
-}
-
-.control {
-  display: flex;
-  flex-direction: column;
+  gap: 60px;
   align-items: center;
 }
 
-/* 🔥 TOGGLE SWITCH */
-.switch {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  transform: rotate(-10deg);
+/* MODULE */
+.module {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.switch input {
+/* 🔥 REAL SWITCH */
+.toggle-real {
+  width: 70px;
+  height: 35px;
+  position: relative;
+}
+
+.toggle-real input {
   display: none;
 }
 
-.slider {
+.toggle-real label {
   position: absolute;
-  background: #222;
-  border-radius: 30px;
   width: 100%;
   height: 100%;
+  background: #111;
+  border-radius: 30px;
+  border: 2px solid #444;
   cursor: pointer;
-  border: 1px solid rgba(0,255,255,0.3);
 }
 
-.slider::before {
+.toggle-real label::after {
   content: "";
   position: absolute;
-  width: 26px;
-  height: 26px;
-  left: 2px;
-  top: 2px;
-  background: white;
+  width: 30px;
+  height: 30px;
+  background: #ddd;
   border-radius: 50%;
+  top: 1px;
+  left: 2px;
   transition: 0.3s;
 }
 
-input:checked + .slider {
+.toggle-real input:checked + label {
   background: cyan;
-  box-shadow: 0 0 10px cyan;
+  box-shadow: 0 0 10px cyan inset;
 }
 
-input:checked + .slider::before {
-  transform: translateX(30px);
+.toggle-real input:checked + label::after {
+  transform: translateX(35px);
 }
 
 /* 🔥 IR SENSOR */
-.ir-sensor {
-  width: 50px;
-  height: 50px;
-  background: radial-gradient(circle, #111 40%, #000);
-  border-radius: 50%;
-  border: 2px solid cyan;
+.ir-real {
+  width: 60px;
+  height: 60px;
+  background: #0a0a0a;
+  border-radius: 12px;
+  border: 2px solid #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  cursor: pointer;
 }
 
-.ir-sensor::after {
+.ir-eye {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, cyan, #001);
+  border-radius: 50%;
+}
+
+/* detection zone */
+.ir-real::after {
   content: "";
   position: absolute;
-  width: 80px;
-  height: 80px;
-  top: -15px;
-  left: -15px;
+  width: 120px;
+  height: 120px;
+  top: -30px;
+  left: -30px;
   border-radius: 50%;
   background: rgba(0,255,255,0.05);
   opacity: 0;
   transition: 0.3s;
 }
 
-.ir-sensor:hover::after {
+.ir-real:hover::after {
   opacity: 1;
 }
 
-/* 🔥 TOUCH SENSOR */
-.touch-btn {
+/* 🔥 TOUCH */
+.touch-real {
   padding: 12px 18px;
-  background: #300;
-  border: 1px solid red;
+  background: #220000;
+  border: 2px solid red;
   color: red;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: bold;
 }
 
-.touch-btn:hover {
-  box-shadow: 0 0 10px red;
+.touch-real:active {
+  transform: scale(0.95);
 }
 
 /* 🔥 LED */
-.led-container {
-  margin-top: 20px;
+.led-section {
+  margin-top: 40px;
 }
 
-.led {
-  width: 30px;
-  height: 30px;
+.led-real {
+  width: 35px;
+  height: 35px;
   background: #111;
   border-radius: 50%;
-  margin: auto;
   border: 2px solid #333;
+  margin: auto;
   transition: 0.3s;
 }
 
-.led.on {
+.led-real.on {
   background: red;
-  box-shadow: 0 0 20px red, 0 0 40px red;
+  box-shadow: 0 0 20px red, 0 0 50px red;
 }
