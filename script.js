@@ -341,3 +341,35 @@ funFactBtn.addEventListener("click", () => {
     funFactBox.classList.remove("active");
   }, 6000);
 });
+const stats = document.querySelectorAll(".stat-number");
+
+function animateStats() {
+  stats.forEach(stat => {
+    const target = +stat.getAttribute("data-target");
+    let current = 0;
+
+    const interval = setInterval(() => {
+      // 🎰 random fast rolling effect
+      stat.textContent = Math.floor(Math.random() * (target + 10));
+
+    }, 50);
+
+    // stop and fix number after delay
+    setTimeout(() => {
+      clearInterval(interval);
+      stat.textContent = target + "+";
+    }, 1500 + Math.random() * 500); // slight variation
+  });
+}
+
+// trigger when visible (not instantly)
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateStats();
+      observer.disconnect();
+    }
+  });
+});
+
+observer.observe(document.querySelector(".stats"));
